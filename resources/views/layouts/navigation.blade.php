@@ -21,6 +21,9 @@
                     <x-nav-link :href="route('peticiones')" :active="request()->routeIs('peticiones')">
                         Peticiones
                     </x-nav-link>
+                    <x-nav-link :href="route('formulario.create')" :active="request()->routeIs('formulario.create')">
+                        Formulario
+                    </x-nav-link>
                 </div>
             </div>
 
