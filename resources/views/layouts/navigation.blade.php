@@ -24,6 +24,9 @@
                     <x-nav-link :href="route('formulario.create')" :active="request()->routeIs('formulario.create')">
                         Formulario
                     </x-nav-link>
+                    <x-nav-link :href="route('calendario.index')" :active="request()->routeIs('calendario.index')">
+                        Calendario
+                    </x-nav-link>
                 </div>
             </div>
 

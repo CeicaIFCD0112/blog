@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ActividadesController;
 use App\Http\Controllers\PeticionesController;
 use App\Http\Controllers\FormularioController;
+use App\Http\Controllers\EventController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -27,6 +28,8 @@ Route::middleware('auth')->group(function () {
     //Route::get('/formulario', [FormularioController::class, 'index'])->name('formulario');
     Route::get('/formulario', [FormularioController::class, 'create'])->name('formulario.create');
     Route::post('/formulario', [FormularioController::class, 'store'])->name('formulario.store');
+    Route::get('/calendario', [EventController::class, 'index'])->name('calendario.index');
+    Route::post('/calendario', [EventController::class, 'store'])->name('calendario.store');
 });
 
 require __DIR__ . '/auth.php';

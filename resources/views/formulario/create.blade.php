@@ -4,8 +4,6 @@
             Formulario
         </h2>
     </x-slot>
-
-    
     <div class="container">
         <h1>Enviar Formulario</h1>
 
@@ -35,9 +33,4 @@
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
     </div>  
-
-
-
-
-  
 </x-app-layout>
