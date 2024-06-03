@@ -7,7 +7,7 @@
     <div class="container mt-5">
         <h1>Calendario de Eventos</h1>
 
-        <form action="{{ route('calendario.store') }}" method="POST" class="mb-4">
+        <form id="eventForm" action="{{ route('calendario.store') }}" method="POST" class="mb-4">
             @csrf
             <div class="mb-3">
                 <label for="fecha" class="form-label">Fecha</label>
@@ -29,7 +29,7 @@
                 <label for="email" class="form-label">Email</label>
                 <input type="email" class="form-control" id="email" name="email" required>
             </div>
-            <button type="submit" class="btn btn-primary">Agregar Evento</button>
+            <button type="submit" class="btn btn-primary" id="submitBtn">Agregar Evento</button>
         </form>
 
         <h2>Lista de Eventos</h2>
@@ -56,4 +56,19 @@
             </tbody>
         </table>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const form = document.getElementById('eventForm');
+            const submitBtn = document.getElementById('submitBtn');
+
+            form.addEventListener('submit', (e) => {
+                submitBtn.disabled = true;
+            });
+
+            form.addEventListener('input', (e) => {
+                submitBtn.disabled = false;
+            });
+        });
+    </script>
 </x-app-layout>
